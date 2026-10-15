@@ -517,7 +517,7 @@ minzdrav.gov.ru
 mnr.gov.ru
 monitoring.gov.ru
 nalog.gov.ru   [есть]
-nspd.gov.ru
+nspd.gov.ru   [есть]
 obrnadzor.gov.ru
 ot.gov.ru
 platform.gov.ru
@@ -541,4 +541,4 @@ transport.gov.ru
 virustest.gov.ru
 voda.gov.ru
 vybory.gov.ru
-zakupki.gov.ru
+zakupki.gov.ru   [есть]

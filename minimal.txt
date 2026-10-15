@@ -112,3 +112,5 @@ sfr.gov.ru
 rosreestr.gov.ru
 rosreestr.ru
 mos.ru
+zakupki.gov.ru
+nspd.gov.ru
