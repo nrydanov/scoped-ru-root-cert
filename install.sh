@@ -44,8 +44,15 @@ Darwin)
   security add-trusted-cert -r trustRoot -p ssl -k "$K" localca.crt
   security add-certificates -k "$K" cross.crt ;;
 Linux)
-  sudo cp localca.crt /usr/local/share/ca-certificates/scoped-ru-root-localca.crt
-  sudo cp cross.crt /usr/local/share/ca-certificates/scoped-ru-root-cross.crt
-  sudo update-ca-certificates ;;
+  if [ -d /usr/local/share/ca-certificates ]; then
+    # Debian/Ubuntu — update-ca-certificates
+    D=/usr/local/share/ca-certificates; U=update-ca-certificates
+  else
+    # ALT, Fedora, RHEL — p11-kit и update-ca-trust
+    D=/etc/pki/ca-trust/source/anchors; U=update-ca-trust
+  fi
+  sudo cp localca.crt "$D/scoped-ru-root-localca.crt"
+  sudo cp cross.crt "$D/scoped-ru-root-cross.crt"
+  sudo "$U" ;;
 esac
 echo "установлено"
